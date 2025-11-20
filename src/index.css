@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-poppins: 'Poppins', system-ui, sans-serif;
     --font-geist: 'Geist', system-ui, sans-serif;
     --font-geist-mono: 'Geist Mono', monospace;
     --font-mona: 'Mona Sans', system-ui, sans-serif;
@@ -18,11 +19,15 @@
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-white text-gray-900;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-poppins);
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Utilities */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
@@ -43,4 +48,7 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
